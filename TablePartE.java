@@ -17,6 +17,10 @@ import org.apache.hadoop.hbase.client.Scan;
 
 import org.apache.hadoop.hbase.util.Bytes;
 
+import org.apache.hadoop.hbase.client.Connection;
+import org.apache.hadoop.hbase.client.ConnectionFactory;
+import org.apache.hadoop.hbase.client.Table;
+
 public class TablePartE{
 
    public static void main(String[] args) throws IOException {
@@ -24,8 +28,9 @@ public class TablePartE{
 	// Instantiating Configuration class
     Configuration config = HBaseConfiguration.create();
 
+    Connection connection = ConnectionFactory.createConnection(config);
     // Instantiating HTable class
-    HTable table = new HTable(config, "powers");
+    Table table = connection.getTable(TableName.valueOf("powers"));
 
     // Instantiating the Scan class
     Scan scan = new Scan();   
