@@ -30,7 +30,7 @@ public class TablePartA{
     Configuration con = HBaseConfiguration.create();
 
     // Instantiating HbaseAdmin class
-    Connection conn =ConnectionFactory.createConnection(conf);
+    Connection conn =ConnectionFactory.createConnection(con);
 	Admin admin  = conn.getAdmin();
 
     // Instantiating table descriptor class
