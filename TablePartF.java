@@ -59,7 +59,8 @@ public class TablePartF{
 		}
 	}
 
-	scanner.close();
+	scanner1.close();
+	scanner2.close();
 
    }
 }
