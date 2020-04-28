@@ -19,6 +19,10 @@ import org.apache.hadoop.hbase.client.Get;
 
 import org.apache.hadoop.hbase.util.Bytes;
 
+
+import org.apache.hadoop.hbase.client.Connection;
+import org.apache.hadoop.hbase.client.ConnectionFactory;
+
 public class TablePartD{
 
    public static void main(String[] args) throws IOException {
@@ -26,8 +30,9 @@ public class TablePartD{
    	// Instantiating Configuration class
     Configuration config = HBaseConfiguration.create();
 
+    Connection connection = ConnectionFactory.createConnection(config);
     // Instantiating HTable class
-    HTable table = new HTable(config, "powers");
+    Table table = connection.getTable(TableName.valueOf("powers"));
 
     Get getr1 = new Get(Bytes.toBytes("row1"));
     Result r1 = table.get(getr1);
