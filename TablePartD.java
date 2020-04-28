@@ -22,6 +22,7 @@ import org.apache.hadoop.hbase.util.Bytes;
 
 import org.apache.hadoop.hbase.client.Connection;
 import org.apache.hadoop.hbase.client.ConnectionFactory;
+import org.apache.hadoop.hbase.client.Table;
 
 public class TablePartD{
 
