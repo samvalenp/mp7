@@ -44,13 +44,13 @@ public class TablePartC{
         String[] splitt = line.split(",");
         Put p = new Put(Bytes.toBytes(splitt[0]));
 
-        p.add(Bytes.toBytes("personal"), Bytes.toBytes("hero"), Bytes.toBytes(splitt[1]));
-        p.add(Bytes.toBytes("personal"), Bytes.toBytes("power"), Bytes.toBytes(splitt[2]));
+        p.addColumn(Bytes.toBytes("personal"), Bytes.toBytes("hero"), Bytes.toBytes(splitt[1]));
+        p.addColumn(Bytes.toBytes("personal"), Bytes.toBytes("power"), Bytes.toBytes(splitt[2]));
 
-        p.add(Bytes.toBytes("professional"), Bytes.toBytes("name"), Bytes.toBytes(splitt[3]));
-        p.add(Bytes.toBytes("professional"), Bytes.toBytes("xp"), Bytes.toBytes(splitt[4]));
+        p.addColumn(Bytes.toBytes("professional"), Bytes.toBytes("name"), Bytes.toBytes(splitt[3]));
+        p.addColumn(Bytes.toBytes("professional"), Bytes.toBytes("xp"), Bytes.toBytes(splitt[4]));
 
-        p.add(Bytes.toBytes("custom"), Bytes.toBytes("color"), Bytes.toBytes(splitt[5]));
+        p.addColumn(Bytes.toBytes("custom"), Bytes.toBytes("color"), Bytes.toBytes(splitt[5]));
 
         table.put(p);
     }    
