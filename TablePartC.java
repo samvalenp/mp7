@@ -24,6 +24,8 @@ import java.io.File;
 
 import org.apache.hadoop.hbase.client.Table;
 import java.util.Scanner;
+import org.apache.hadoop.hbase.client.Connection;
+import org.apache.hadoop.hbase.client.ConnectionFactory;
 
 public class TablePartC{
 
