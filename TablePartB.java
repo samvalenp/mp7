@@ -21,11 +21,12 @@ public class TablePartB{
 
    public static void main(String[] args) throws IOException {
 
-   	// Instantiating a configuration class
-    Configuration conf = HBaseConfiguration.create();
+   	// Instantiating configuration class
+    Configuration con = HBaseConfiguration.create();
 
-    // Instantiating HBaseAdmin class
-    HBaseAdmin admin = new HBaseAdmin(conf);
+    // Instantiating HbaseAdmin class
+    Connection conn =ConnectionFactory.createConnection(con);
+	Admin admin  = conn.getAdmin();
 
    	HTableDescriptor[] tableDescriptor = admin.listTables();
 
