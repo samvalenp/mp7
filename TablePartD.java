@@ -44,20 +44,20 @@ public class TablePartD{
 	// DON' CHANGE THE 'System.out.println(xxx)' OUTPUT PART
 	// OR YOU WON'T RECEIVE POINTS FROM THE GRADER 
 	
-	String hero = r1.getValue(Bytes.toBytes("personal"),Bytes.toBytes("hero"));
-	String power = r1.getValue(Bytes.toBytes("personal"),Bytes.toBytes("power"));
-	String name = r1.getValue(Bytes.toBytes("professional"),Bytes.toBytes("name"));
-	String xp = r1.getValue(Bytes.toBytes("professional"),Bytes.toBytes("xp"));
-	String color = r1.getValue(Bytes.toBytes("custom"),Bytes.toBytes("color"));
+	String hero = new String(r1.getValue(Bytes.toBytes("personal"),Bytes.toBytes("hero")));
+	String power = new String(r1.getValue(Bytes.toBytes("personal"),Bytes.toBytes("power")));
+	String name = new String(r1.getValue(Bytes.toBytes("professional"),Bytes.toBytes("name")));
+	String xp = new String(r1.getValue(Bytes.toBytes("professional"),Bytes.toBytes("xp")));
+	String color = new String(r1.getValue(Bytes.toBytes("custom"),Bytes.toBytes("color")));
 	System.out.println("hero: "+hero+", power: "+power+", name: "+name+", xp: "+xp+", color: "+color);
 
-	hero = r19.getValue(Bytes.toBytes("personal"),Bytes.toBytes("hero"));
-	color = r19.getValue(Bytes.toBytes("custom"),Bytes.toBytes("color"));
+	hero = new String(r19.getValue(Bytes.toBytes("personal"),Bytes.toBytes("hero")));
+	color = new String(r19.getValue(Bytes.toBytes("custom"),Bytes.toBytes("color")));
 	System.out.println("hero: "+hero+", color: "+color);
 
-	hero = r1.getValue(Bytes.toBytes("personal"),Bytes.toBytes("hero"));
-	name = r1.getValue(Bytes.toBytes("professional"),Bytes.toBytes("name"));
-	color = r1.getValue(Bytes.toBytes("custom"),Bytes.toBytes("color"));
+	hero = new String(r1.getValue(Bytes.toBytes("personal"),Bytes.toBytes("hero")));
+	name = new String(r1.getValue(Bytes.toBytes("professional"),Bytes.toBytes("name")));
+	color = new String(r1.getValue(Bytes.toBytes("custom"),Bytes.toBytes("color")));
 	System.out.println("hero: "+hero+", name: "+name+", color: "+color); 
    }
 }
