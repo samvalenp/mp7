@@ -22,20 +22,24 @@ import org.apache.hadoop.hbase.client.Scan;
 import org.apache.hadoop.hbase.util.Bytes;
 import java.io.File;
 
+import org.apache.hadoop.hbase.client.Table;
+import java.util.Scanner;
+
 public class TablePartC{
 
    public static void main(String[] args) throws IOException {
 
    	Configuration config = HBaseConfiguration.create();
 
+   	Connection connection = ConnectionFactory.createConnection(config);
     // Instantiating HTable class
-    HTable table = new HTable(config, "powers");
+    Table table = connection.getTable(TableName.valueOf("powers"));
 
 
 	Scanner sc = new Scanner(new File("input.csv"));
     while (sc.hasNextLine()) {
         String line = sc.nextLine();
-        String splitt = line.split(",");
+        String[] splitt = line.split(",");
         Put p = new Put(Bytes.toBytes(splitt[0]));
 
         p.add(Bytes.toBytes("personal"), Bytes.toBytes("hero"), Bytes.toBytes(splitt[1]));
