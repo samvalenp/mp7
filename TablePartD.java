@@ -23,24 +23,35 @@ public class TablePartD{
 
    public static void main(String[] args) throws IOException {
 
-	// TODO      
+   	// Instantiating Configuration class
+    Configuration config = HBaseConfiguration.create();
+
+    // Instantiating HTable class
+    HTable table = new HTable(config, "powers");
+
+    Get getr1 = new Get(Bytes.toBytes("row1"));
+    Result r1 = table.get(getr1);
+
+    Get getr19 = new Get(Bytes.toBytes("row19"));
+    Result r19 = table.get(getr1);
+
 	// DON' CHANGE THE 'System.out.println(xxx)' OUTPUT PART
 	// OR YOU WON'T RECEIVE POINTS FROM THE GRADER 
 	
-	String hero = ???;
-	String power = ???;
-	String name = ???;
-	String xp = ???;
-	String color = ???;
+	String hero = r1.getValue(Bytes.toBytes("personal"),Bytes.toBytes("hero"));
+	String power = r1.getValue(Bytes.toBytes("personal"),Bytes.toBytes("power"));
+	String name = r1.getValue(Bytes.toBytes("professional"),Bytes.toBytes("name"));
+	String xp = r1.getValue(Bytes.toBytes("professional"),Bytes.toBytes("xp"));
+	String color = r1.getValue(Bytes.toBytes("custom"),Bytes.toBytes("color"));
 	System.out.println("hero: "+hero+", power: "+power+", name: "+name+", xp: "+xp+", color: "+color);
 
-	hero = ???;
-	color = ???;
+	hero = r19.getValue(Bytes.toBytes("personal"),Bytes.toBytes("hero"));
+	color = r19.getValue(Bytes.toBytes("custom"),Bytes.toBytes("color"));
 	System.out.println("hero: "+hero+", color: "+color);
 
-	hero = ???;
-	name = ???;
-	color = ???;
+	hero = r1.getValue(Bytes.toBytes("personal"),Bytes.toBytes("hero"));
+	name = r1.getValue(Bytes.toBytes("professional"),Bytes.toBytes("name"));
+	color = r1.getValue(Bytes.toBytes("custom"),Bytes.toBytes("color"));
 	System.out.println("hero: "+hero+", name: "+name+", color: "+color); 
    }
 }
