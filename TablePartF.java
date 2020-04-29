@@ -60,7 +60,7 @@ public class TablePartF{
 
 
 	for(int i = 0; i < list.size(); i++){
-		for(int j = i + 1; j < list.size(); j++){
+		for(int j = 0; j < list.size(); j++){
 			if(list.get(i).get(0).equals(list.get(j).get(0)) && !list.get(i).get(1).equals(list.get(j).get(1))){
 				System.out.println(list.get(i).get(1) + ", " + list.get(i).get(2) + ", " + list.get(j).get(1) + ", " + list.get(j).get(2) + ", "+list.get(i).get(0));
 			}
