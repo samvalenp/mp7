@@ -38,10 +38,16 @@ public class TablePartF{
     scan.addColumn(Bytes.toBytes("personal"), Bytes.toBytes("power"));
     scan.addColumn(Bytes.toBytes("professional"), Bytes.toBytes("name"));
 
+    Scan scan2 = new Scan();   
+
+    scan2.addColumn(Bytes.toBytes("custom"), Bytes.toBytes("color"));
+    scan2.addColumn(Bytes.toBytes("personal"), Bytes.toBytes("power"));
+    scan2.addColumn(Bytes.toBytes("professional"), Bytes.toBytes("name"));
+
 	// DON' CHANGE THE 'System.out.println(xxx)' OUTPUT PART
 	// OR YOU WON'T RECEIVE POINTS FROM THE GRADER
 	ResultScanner scanner1 = table.getScanner(scan);
-	ResultScanner scanner2 = table.getScanner(scan);
+	ResultScanner scanner2 = table.getScanner(scan2);
 
 	for (Result result1 = scanner1.next(); result1 != null; result1 = scanner1.next()){
 		for(Result result2 = scanner2.next(); result2 != null; result2 = scanner2.next()){
