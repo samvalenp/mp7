@@ -31,6 +31,7 @@ public class TablePartF{
     Connection connection = ConnectionFactory.createConnection(config);
     // Instantiating HTable class
     Table table = connection.getTable(TableName.valueOf("powers"));
+    Table table1 = connection.getTable(TableName.valueOf("powers"));
 
     Scan scan = new Scan();   
 
@@ -47,7 +48,7 @@ public class TablePartF{
 	// DON' CHANGE THE 'System.out.println(xxx)' OUTPUT PART
 	// OR YOU WON'T RECEIVE POINTS FROM THE GRADER
 	ResultScanner scanner1 = table.getScanner(scan);
-	ResultScanner scanner2 = table.getScanner(scan2);
+	ResultScanner scanner2 = table1.getScanner(scan2);
 
 	for (Result result1 = scanner1.next(); result1 != null; result1 = scanner1.next()){
 		for(Result result2 = scanner2.next(); result2 != null; result2 = scanner2.next()){
