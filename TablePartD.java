@@ -39,7 +39,7 @@ public class TablePartD{
     Result r1 = table.get(getr1);
 
     Get getr19 = new Get(Bytes.toBytes("row19"));
-    Result r19 = table.get(getr1);
+    Result r19 = table.get(getr19);
 
 	// DON' CHANGE THE 'System.out.println(xxx)' OUTPUT PART
 	// OR YOU WON'T RECEIVE POINTS FROM THE GRADER 
